@@ -24,10 +24,12 @@ import sys
 import io
 
 # path = get_file('nietzsche.txt', origin='https://s3.amazonaws.com/text-datasets/nietzsche.txt')
-path = "..\\..\\\\simple-examples\\data\\ptb.train.eos.txt"
-with io.open(path, encoding='utf-8') as f:
+path = 'ptb.train.eos.txt'
+with io.open(path, encoding='utf-8') as f:  
     text = open(path).read().lower().split()[:10000]
 print('corpus length:', len(text))
+print(text)
+#exit()
 
 chars = sorted(list(set(text)))
 print('total chars:', len(chars))
@@ -60,7 +62,7 @@ print("x ", x.shape)
 print("y ", y.shape)
 print(maxlen, len(chars))
 
-train = True
+train = False
 if train:
     print('Build model...')
     model = Sequential()
